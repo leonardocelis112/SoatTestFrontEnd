@@ -10,11 +10,17 @@ import { CollapseModule } from 'ng2-bootstrap/collapse';
 // Components
 import { MainComponent } from './components/main/main';
 import { HomeComponent } from './components/home/home';
+import { LoginComponent } from './components/login/login';
+import { RegisterComponent } from './components/register/register';
+import { ListUserInsurancesComponent } from './components/user/insurances/list/list-user';
 
 @NgModule({
   declarations: [
     MainComponent,
-    HomeComponent
+    HomeComponent,
+    LoginComponent,
+    RegisterComponent,
+    ListUserInsurancesComponent
   ],
   imports: [
     AlertModule.forRoot(),

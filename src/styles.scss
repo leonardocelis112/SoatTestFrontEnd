@@ -8,7 +8,7 @@ $primary-color-light:  #B2DFDB;
 $primary-color-text:   #5b6770;
 $accent-color:         #ff9e1b;
 $primary-text-color:   #212121;
-$secondary-text-color: #757575;
+$secondary-text-color: #FFFFFF;
 $divider-color:        #BDBDBD;
 
 .primary-color{
@@ -42,4 +42,25 @@ $divider-color:        #BDBDBD;
 
 body{
   font-family: 'Roboto', sans-serif !important;
+  min-height: 100%;
+  padding-bottom: 60px;
+}
+html { height: 100%; }
+
+.app-view-container{
+  margin-top: 10rem;
+  padding-bottom: 2rem;
+  background-color: white;
+  border: 1px solid $divider-color;
+  border-radius: 5px;
+}
+
+footer {
+  position: absolute;
+  left: 0 ; right: 0; bottom: 0;
+  height: 60px;
+    p{
+      text-align: center;
+      margin-top: 2rem;
+    }
 }

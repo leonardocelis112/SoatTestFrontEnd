@@ -4,6 +4,10 @@
 /dist
 /tmp
 
+# ts files
+app/**/*.js
+app/**/*.js.map
+
 # dependencies
 /node_modules
 

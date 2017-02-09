@@ -17,6 +17,19 @@ export class MainComponent {
     emmiter.eventEmmited$.subscribe(user => this.currentUser = user);
   }
 
+  isAdmin(){
+    if (this.currentUser != undefined){
+      if (this.currentUser.roles[0].name === 'admin'){
+        return true;
+      }
+      else{
+        return false;
+      }
+    }else{
+      return false;
+    }
+  }
+
   logout(){
     this.currentUser = null;
     this.router.navigate(['login']);

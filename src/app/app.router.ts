@@ -5,11 +5,15 @@ import { HomeComponent } from './components/home/home';
 import { LoginComponent } from './components/login/login';
 import { RegisterComponent } from './components/register/register';
 import { ListUserInsurancesComponent } from './components/user/insurances/list/list-user';
+import { CreateInsuranceUsersComponent } from './components/user/insurances/create/create-user-insurance';
+import { UserProfileComponent } from './components/user/profile/profile';
 
 const appRoutes: Routes = [
-  { path: 'login', component: LoginComponent},
-  { path: 'register', component: RegisterComponent},
-  { path: 'user/:id/insurances', component: ListUserInsurancesComponent},
+  { path: 'login', component: LoginComponent },
+  { path: 'profile', component: UserProfileComponent },
+  { path: 'register', component: RegisterComponent },
+  { path: 'user/:id/insurances', component: ListUserInsurancesComponent },
+  { path: 'user/:id/insurances/create', component: CreateInsuranceUsersComponent },
   { path: 'crisis-center', component: MainComponent },
   { path: 'hero/:id',      component: MainComponent },
   {

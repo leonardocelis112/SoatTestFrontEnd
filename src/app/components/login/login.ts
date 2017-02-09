@@ -37,7 +37,6 @@ export class LoginComponent {
       );
   }
   handleError(error: any){
-    console.log(parent);
     this.showAlert = true;
     this.alertType = "danger";
     this.response = JSON.parse(error._body);

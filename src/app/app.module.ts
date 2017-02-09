@@ -9,6 +9,7 @@ import { CollapseModule } from 'ng2-bootstrap/collapse';
 import { SessionsService } from './services/sessions/sessions';
 import { EmmiterService } from './services/emmiters/emmiter';
 import { UsersService } from './services/users/users';
+import { VehiclesService } from './services/vehicles/vehicles';
 
 // Components
 import { MainComponent } from './components/main/main';
@@ -16,6 +17,8 @@ import { HomeComponent } from './components/home/home';
 import { LoginComponent } from './components/login/login';
 import { RegisterComponent } from './components/register/register';
 import { ListUserInsurancesComponent } from './components/user/insurances/list/list-user';
+import { CreateInsuranceUsersComponent } from './components/user/insurances/create/create-user-insurance';
+import { UserProfileComponent } from './components/user/profile/profile';
 
 @NgModule({
   declarations: [
@@ -23,7 +26,9 @@ import { ListUserInsurancesComponent } from './components/user/insurances/list/l
     HomeComponent,
     LoginComponent,
     RegisterComponent,
-    ListUserInsurancesComponent
+    ListUserInsurancesComponent,
+    CreateInsuranceUsersComponent,
+    UserProfileComponent
   ],
   imports: [
     AlertModule.forRoot(),
@@ -33,7 +38,10 @@ import { ListUserInsurancesComponent } from './components/user/insurances/list/l
     HttpModule,
     AppRouter
   ],
-  providers: [SessionsService, EmmiterService, UsersService],
+  providers: [
+    SessionsService, EmmiterService, UsersService,
+    VehiclesService
+  ],
   bootstrap: [MainComponent]
 })
 export class AppModule { }

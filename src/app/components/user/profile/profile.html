@@ -1,0 +1,39 @@
+<div class="row">
+  <div class="col-xs-12 col-sm-12 col-md-offset-3 col-md-6 col-lg-offset-3 col-lg-6 app-view-container">
+    <h2 class="text-center">Edita tus datos</h2>
+    <div *ngIf="showAlert" class="alert-margin alert alert-{{message.type}} alert-dismissible" role="alert">
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close" (click)="showAlert = false;"><span aria-hidden="true">&times;</span></button>
+      <strong>¡{{(message.type === 'success')? 'Exito': 'Error'}}!</strong> {{message.data}}
+    </div>
+    <form  #form="ngForm" (ngSubmit)="submitForm(form.value)">
+      <div class="form-group">
+        <label for="first_name">Nombres</label>
+        <input type="text" class="form-control" [(ngModel)]="currentUser.first_name" name = "firstName" id="first_name" placeholder="Nombres" required>
+      </div>
+      <div class="form-group">
+        <label for="last_name">Apellidos</label>
+        <input type="text" class="form-control" [(ngModel)]="currentUser.last_name" name = "lastName" id="last_name" placeholder="Nombres" required>
+      </div>
+      <div class="form-group">
+        <label for="documentTypeSelect">Tipo de documento</label>
+        <select [(ngModel)]="currentUser.document_type" class="form-control" name="documentType" id="documentTypeSelect" required>
+            <option value="Cedula" selected="selected">Cedula</option>
+            <option value="Pasaporte">Pasaporte</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="documentNumber">Numero de documento</label>
+        <input type="text" class="form-control" [(ngModel)]="currentUser.document_number" name = "documentNumber" id="documentNumber" placeholder="Numero de documento" ngModel required>
+      </div>
+      <div class="form-group">
+        <label for="email">Correo Electronico</label>
+        <input type="email" class="form-control" [(ngModel)]="currentUser.email" name = "email" id="email" placeholder="Correo Electronico" ngModel required>
+      </div>
+      <div class="form-group">
+        <label for="telephone">Telefono</label>
+        <input type="text" class="form-control" [(ngModel)]="currentUser.telephone" name = "telephone" id="telephone" placeholder="Telefono" ngModel required>
+      </div>
+      <button type="submit" class="btn btn-default accent-color secondary-text-color">Actualizar</button>
+    </form>
+  </div>
+</div>

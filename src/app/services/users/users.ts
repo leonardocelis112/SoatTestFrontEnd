@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
+import { ApiEndpoint } from '../api';
 import 'rxjs/add/operator/map';
 
 @Injectable()
@@ -13,7 +14,7 @@ export class UsersService {
       first_name: firstName,
       last_name: lastName
     }
-    return this.http.post('http://localhost:3000/users',payload)
+    return this.http.post(`${ApiEndpoint}/users`,payload)
       .map(response => response.json());
   }
 

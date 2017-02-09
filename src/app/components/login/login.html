@@ -1,5 +1,9 @@
 <div class="row">
   <div class="col-xs-12 col-sm-12 col-md-offset-3 col-md-6 col-lg-offset-3 col-lg-6 app-view-container">
+    <div *ngIf="response && showAlert" class="alert-margin alert alert-{{alertType}} alert-dismissible" role="alert">
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close" (click)="showAlert = false;"><span aria-hidden="true">&times;</span></button>
+      <strong>¡{{(alertType === 'success')? 'Exito': 'Error'}}!</strong> {{response.message}}
+    </div>
     <form  #form="ngForm" (ngSubmit)="submitForm(form.value)">
       <h2 class="text-center">Bienvenido</h2>
       <div class="form-group">

@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
+import { EmmiterService } from '../../services/emmiters/emmiter';
 
 @Component({
   selector: 'main',
@@ -6,6 +8,18 @@ import { Component } from '@angular/core';
   styleUrls: ['./main.scss']
 })
 export class MainComponent {
+  private currentUser : any
   public isCollapsed: boolean = true;
-  title = 'app works!';
+  constructor(private router: Router, private emmiter: EmmiterService){
+    if(localStorage.getItem('currentUser')) {
+      this.currentUser = JSON.parse(localStorage.getItem('currentUser')) || null;
+    }
+    emmiter.eventEmmited$.subscribe(user => this.currentUser = user);
+  }
+
+  logout(){
+    this.currentUser = null;
+    this.router.navigate(['login']);
+    localStorage.removeItem('currentUser');
+  }
 }

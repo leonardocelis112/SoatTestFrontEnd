@@ -6,6 +6,9 @@ import { HttpModule } from '@angular/http';
 import { AppRouter } from './app.router';
 import { AlertModule } from 'ng2-bootstrap';
 import { CollapseModule } from 'ng2-bootstrap/collapse';
+import { SessionsService } from './services/sessions/sessions';
+import { EmmiterService } from './services/emmiters/emmiter';
+import { UsersService } from './services/users/users';
 
 // Components
 import { MainComponent } from './components/main/main';
@@ -30,7 +33,7 @@ import { ListUserInsurancesComponent } from './components/user/insurances/list/l
     HttpModule,
     AppRouter
   ],
-  providers: [],
+  providers: [SessionsService, EmmiterService, UsersService],
   bootstrap: [MainComponent]
 })
 export class AppModule { }

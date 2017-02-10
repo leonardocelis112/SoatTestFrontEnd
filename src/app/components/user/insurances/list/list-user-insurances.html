@@ -1,0 +1,71 @@
+<div class="row">
+  <div class="col-xs-12 col-sm-12 col-md-offset-3 col-md-6 col-lg-offset-3 col-lg-6 app-view-container">
+    <h2 class="text-center"> Listado de tus seguros adquiridos </h2>
+    <div *ngIf="showAlert" class="alert-margin alert alert-{{alertMessage.type}} alert-dismissible" role="alert">
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close" (click)="showAlert = false;"><span aria-hidden="true">&times;</span></button>
+      <strong>¡{{(alertMessage.type === 'success')? 'Exito': 'Alerta'}}!</strong> {{alertMessage.data}}
+    </div>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>
+            Codigo
+          </th>
+          <th>
+            Tipo
+          </th>
+          <th>
+            Placa
+          </th>
+          <th>
+            Adquirido
+          </th>
+          <th>
+            Vence
+          </th>
+          <th>
+            Pagado
+          </th>
+          <th>
+            Detalle
+          </th>
+          <th>
+            Pagar
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let i of insurances" >
+          <td>
+            {{i.id}}
+          </td>
+          <td>
+            {{i.insurance_coverage.kind}}
+          </td>
+          <td>
+            {{i.registration_plate}}
+          </td>
+          <td>
+            {{i.acquired_date | date}}
+          </td>
+          <td>
+            {{i.expiration_date | date}}
+          </td>
+          <td>
+            {{i.paid? 'Si' : 'No'}}
+          </td>
+          <td>
+            <button type="button" [disabled] = "!i.paid" [routerLink]="['/payment_detail/',i.payment_id]" class="btn btn-default primary-color-dark secondary-text-color">
+              <span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>
+            </button>
+          </td>
+          <td>
+            <button type="button" [disabled] = "i.paid" [routerLink]="['/checkout/',i.id]" class="btn btn-default accent-color secondary-text-color">
+              <span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span>
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

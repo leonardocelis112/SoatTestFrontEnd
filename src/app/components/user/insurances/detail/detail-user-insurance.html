@@ -1,0 +1,109 @@
+<div class="row">
+  <div class="col-xs-12 col-sm-12 col-md-offset-3 col-md-6 col-lg-offset-3 col-lg-6 app-view-container">
+    <h2 class="text-center"> Detalle de la compra del seguro </h2>
+    <div class="panel panel-default">
+      <div class="panel-heading">Detalles del seguro</div>
+      <div class="panel-body">
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th>
+                Codigo
+              </th>
+              <th>
+                Clase del vehículo
+              </th>
+              <th *ngIf="isAdmin()">
+                Documento del comprador
+              </th>
+              <th>
+                Placa
+              </th>
+              <th>
+                Adquirido
+              </th>
+              <th>
+                Vence
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngIf="payment">
+              <td>
+                {{payment.soat_insurance.id}}
+              </td>
+              <td>
+                {{payment.soat_insurance.vehicle_details}}
+              </td>
+              <td *ngIf="isAdmin()">
+                {{payment.user.document_number}}
+              </td>
+              <td>
+                {{payment.soat_insurance.registration_plate}}
+              </td>
+              <td>
+                {{payment.soat_insurance.acquired_date | date}}
+              </td>
+              <td>
+                {{payment.soat_insurance.expiration_date | date}}
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <p>
+          COBERTURAS:
+        </p>
+        <div *ngIf="payment">
+          <p *ngFor="let c of payment.soat_insurance.insurance_conditions">
+            {{c}}
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="panel panel-default">
+      <div class="panel-heading">Detalles del pago</div>
+      <div class="panel-body">
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th>
+                Codigo
+              </th>
+              <th>
+                Pagado con tarjeta
+              </th>
+              <th>
+                Prima
+              </th>
+              <th>
+                Contribución
+              </th>
+              <th>
+                Total
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngIf="payment">
+              <td>
+                {{payment.soat_insurance.payment_id}}
+              </td>
+              <td>
+                {{payment.card_number}}
+              </td>
+              <td>
+                {{payment.value | currency:'COL'}}
+              </td>
+              <td>
+                {{payment.contribution | currency:'COL'}}
+              </td>
+              <td>
+                {{payment.total | currency:'COL'}}
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

@@ -10,15 +10,20 @@ import { SessionsService } from './services/sessions/sessions';
 import { EmmiterService } from './services/emmiters/emmiter';
 import { UsersService } from './services/users/users';
 import { VehiclesService } from './services/vehicles/vehicles';
+import { InsurancesService } from './services/insurances/insurances';
+import { PaymentsService } from './services/payments/payments';
 
 // Components
 import { MainComponent } from './components/main/main';
 import { HomeComponent } from './components/home/home';
 import { LoginComponent } from './components/login/login';
 import { RegisterComponent } from './components/register/register';
-import { ListUserInsurancesComponent } from './components/user/insurances/list/list-user';
+import { ListUserInsurancesComponent } from './components/user/insurances/list/list-user-insurances';
 import { CreateInsuranceUsersComponent } from './components/user/insurances/create/create-user-insurance';
 import { UserProfileComponent } from './components/user/profile/profile';
+import { CheckOutComponent } from './components/user/insurances/checkout/checkout-user-insurance';
+import { DetailInsuraceComponent } from './components/user/insurances/detail/detail-user-insurance';
+import { ListAdminInsurancesComponent } from './components/admin/insurances/list/list-admin-insurances';
 
 @NgModule({
   declarations: [
@@ -28,7 +33,10 @@ import { UserProfileComponent } from './components/user/profile/profile';
     RegisterComponent,
     ListUserInsurancesComponent,
     CreateInsuranceUsersComponent,
-    UserProfileComponent
+    UserProfileComponent,
+    CheckOutComponent,
+    DetailInsuraceComponent,
+    ListAdminInsurancesComponent
   ],
   imports: [
     AlertModule.forRoot(),
@@ -40,7 +48,8 @@ import { UserProfileComponent } from './components/user/profile/profile';
   ],
   providers: [
     SessionsService, EmmiterService, UsersService,
-    VehiclesService
+    VehiclesService, InsurancesService,
+    PaymentsService
   ],
   bootstrap: [MainComponent]
 })

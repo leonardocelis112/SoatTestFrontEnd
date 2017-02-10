@@ -14,7 +14,7 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div id="navbar" class="navbar-collapse collapse" [collapse]="isCollapsed">
       <ul class="nav navbar-nav navbar-right">
-        <li *ngIf="isAdmin()"><a class="primary-color-text" routerLink="/login" >Ver seguros comprados</a></li>
+        <li *ngIf="isAdmin()"><a class="primary-color-text" routerLink="/admin/payments" >Ver seguros comprados</a></li>
         <li *ngIf="!isAdmin() && currentUser"><a class="primary-color-text" [routerLink]="['/user/'+currentUser.id+'/insurances/create']" >Adquirir Soat</a></li>
         <li *ngIf="!isAdmin() && currentUser"><a class="primary-color-text" [routerLink]="['/user/'+currentUser.id+'/insurances']">Mis seguros adquiridos</a></li>
         <li *ngIf="!isAdmin() && currentUser"><a class="primary-color-text" routerLink="/profile">Perfil</a></li>

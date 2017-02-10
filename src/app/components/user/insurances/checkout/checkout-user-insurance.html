@@ -1,0 +1,28 @@
+<div class="row">
+  <div class="col-xs-12 col-sm-12 col-md-offset-3 col-md-6 col-lg-offset-3 col-lg-6 app-view-container">
+    <h2 class="text-center">Pagar Póliza</h2>
+    <form #form="ngForm" (ngSubmit)="submitForm(form.value)">
+      <div class="form-group">
+        <label for="cardOwnerName">Titular de la tarjeta</label>
+        <input type="text" class="form-control" ngModel name = "cardOwnerName" id="cardOwnerName" placeholder="Nombres" required>
+      </div>
+      <div class="form-group">
+        <label for="cardNumber">Numero de la tarjeta</label>
+        <input type="text" class="form-control" ngModel name = "cardNumber" id="cardNumber" placeholder="Nombres" required>
+      </div>
+      <div class="form-group">
+        <label for="expirationDate">Fecha de expiracion</label>
+        <input type="date" class="form-control" ngModel name = "expirationDate" id="expirationDate"required>
+      </div>
+      <div class="form-group">
+        <label for="securityCode">Código de seguridad</label>
+        <input type="number" class="form-control" ngModel name = "securityCode" id="securityCode" required>
+      </div>
+      <div class="form-group">
+        <label for="numberOfDues">Numero de cuotas</label>
+        <input type="numberOfDues" class="form-control" ngModel name = "numberOfDues" id="numberOfDues" required>
+      </div>
+      <button type="submit" class="btn btn-default accent-color secondary-text-color">Pagar póliza</button>
+    </form>
+  </div>
+</div>

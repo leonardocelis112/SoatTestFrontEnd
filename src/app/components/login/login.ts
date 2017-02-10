@@ -45,7 +45,11 @@ export class LoginComponent {
   handleRedirect(){
     this.emmiter.emit(this.response);
     this.saveUserInfo();
-    this.router.navigate([`user/${this.response.id}/insurances`]);
+    if (this.response.roles[0].name === 'admin'){
+      this.router.navigate(['admin/payments']);
+    }else{
+      this.router.navigate([`user/${this.response.id}/insurances`]);
+    }
   }
 
   private saveUserInfo (){

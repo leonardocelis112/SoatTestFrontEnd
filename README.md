@@ -5,11 +5,15 @@ Test project to be part of youse colombia team (FrontEnd)
 ## Technologies Used
 
 Node 7.4.0
+
 Angular 2 (angular - cli)
+
 Express
+
 Bootstrap (css)
 
 Access the project live [HERE](https://soat-test-front.herokuapp.com/)
+
 Complete installation guide [HERE](https://github.com/leonardocelis112/SoatTestBackEnd)
 
 *No test coverage (I'm just trying angular and testing is out of my scope for now)*
@@ -18,12 +22,17 @@ Complete installation guide [HERE](https://github.com/leonardocelis112/SoatTestB
 
 * Emmiters
   * Use Different emmiter for an specific purpose
-*
+* Observables
+  * Use model classes to instanciate object from the services (avoid mutabilty accross time)
+* Forms
+  * It is better to use Form components improving code reusability and proper validation
 
 ## The Hard Way
 
   Node 7.4.0 installed
+
   clone the project and type npm install
+
   ng serve to development server (angular generator previously installed)
 
 ## Api endpoint changes
